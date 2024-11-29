@@ -35,7 +35,7 @@ public class MallDaoImpI implements MallDao {
         try (Connection conn =  DBConnection.getDB().getCon();
              PreparedStatement ps = conn.prepareStatement(sql);) {
 //            ps.setString(1, "%" + keyword + "%");
-            ps.setString(1, "%" + keyword + "%");
+            ps.setString(1, "%" + keyword + "%"); //查詢關鍵字
             try (ResultSet rs = ps.executeQuery();) {
                 while (rs.next()) {
                     Mall mall = new Mall();
